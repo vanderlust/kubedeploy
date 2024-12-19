@@ -4,7 +4,7 @@ metadata:
   name: argocd-vs
 spec:
   hosts:
-  - argocd.umerbeigh.com
+  - argocd.homelab.local
   gateways:
   - istio-system/test-gateway
   http:
