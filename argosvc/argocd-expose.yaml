@@ -4,7 +4,8 @@ metadata:
   name: argocd-vs
 spec:
   hosts:
-  - argocd.homelab.local
+  # - argocd.homelab.local
+  - localhost
   gateways:
   - istio-system/test-gateway
   http:
@@ -12,4 +13,4 @@ spec:
     - destination:
         host: argocd-server.argocd.svc.cluster.local
         port:
-          number: 80
+          number: 8080
