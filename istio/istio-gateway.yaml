@@ -8,8 +8,8 @@ spec:
     istio: ingressgateway
   servers:
   - hosts:
-    - "*.umerbeigh.com"
-    - umerbeigh.com
+    - "*.homelab.local"
+    - homelab.local
     port:
       name: http
       number: 80
