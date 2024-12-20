@@ -10,7 +10,7 @@ spec:
   - hosts:
     - "*.homelab.local"
     - homelab.local
-    - localhost
+    - bnx.local
     port:
       name: http
       number: 80

@@ -6,7 +6,7 @@ metadata:
 spec:
   hosts:
   # - argocd.homelab.local
-  - localhost
+  - bnx.local
   gateways:
   - istio-system/test-gateway
   http:
