@@ -10,6 +10,7 @@ spec:
   - hosts:
     - "*.homelab.local"
     - homelab.local
+    - localhost
     port:
       name: http
       number: 80
