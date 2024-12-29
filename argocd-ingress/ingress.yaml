@@ -1,16 +1,18 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: argocd-ingress
+  name: argocd-ingress
 spec:
- rules:
- - host: cid.cessmedia.com
-   http:
-     paths:
-     - pathType: Prefix
-       path: "/"
-       backend:
-         service:
-           name: argocd-server
-           port:
-             number: 443
+  ingressClassName: nginx # use only with k8s version >= 1.18.0
+  tls:
+  rules:
+  - host: cid.cessmedia.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: argocd-server
+            port:
+              number: 443
