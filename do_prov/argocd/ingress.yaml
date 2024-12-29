@@ -1,0 +1,26 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-ingress
+  namespace: argocd
+  annotations: 
+    kubernetes.io/ingress.class: traefik-external
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`cid.cessmedia.com`)
+      kind: Rule
+      services:
+        - name: argocd-server
+          port: 443
+    - match: Host(`cid.cessmedia.com`)
+      kind: Rule
+      services:
+        - name: argocd-server
+          port: 443
+      middlewares:
+        - name: default-headers
+  tls:
+    secretName: local-example-com-tls

@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: argocd-ingressroute
+  namespace: argocd
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`deploy.cessmedia.com`) && (PathPrefix(`/`))
+      kind: Rule
+      services:
+        - name: argocd-server
+          kind: TraefikService

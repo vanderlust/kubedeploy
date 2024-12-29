@@ -1,0 +1,15 @@
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: api-ingressroute
+  namespace: kube-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`api.cessmedia.com`) && (PathPrefix(`/`))
+      kind: Rule
+      services:
+        - name: api@internal
+          kind: TraefikService
