@@ -4,7 +4,7 @@ metadata:
  name: example-ingress
 spec:
  rules:
- - host: nginx-hello.info
+ - host: proxy.cessmedia.com
    http:
      paths:
      - pathType: Prefix
