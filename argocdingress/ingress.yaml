@@ -6,7 +6,7 @@ spec:
   ingressClassName: argocd-server # use only with k8s version >= 1.18.0
   tls:
   rules:
-  - host: cid.local
+  - host: cid.cessmedia.com
     http:
       paths:
       - path: /
@@ -16,3 +16,26 @@ spec:
             name: argocd-server
             port:
               number: 443
+
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: streaming-ingress
+#   labels:
+#     app: streaming-application
+#   annotations:
+#     nginx.ingress.kubernetes.io/add-base-url: "true"
+#     nginx.ingress.kubernetes.io/rewrite-target: /$1
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#   - host: "streaming.cessmedia.com"
+#     http:
+#       paths:
+#       - path: /
+#         pathType: Prefix
+#         backend:
+#           service:
+#             name: streaming-svc
+#             port:
+#               number: 80
