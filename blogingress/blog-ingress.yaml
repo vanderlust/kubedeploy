@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: blogging-ingress2
+  name: blogging-ingress
   labels:
     app: blogging-application
   annotations:
@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "http://blog.cessmedia.com>"
+  - host: "blog.cessmedia.com"
     http:
       paths:
         # path: /blogs/(.*)
