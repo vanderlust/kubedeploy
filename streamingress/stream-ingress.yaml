@@ -10,7 +10,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "http://streaming.cessmedia.com"
+  - host: "streaming.cessmedia.com"
     http:
       paths:
       - path: /
