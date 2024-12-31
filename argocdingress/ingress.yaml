@@ -28,7 +28,7 @@ metadata:
     # nginx.ingress.kubernetes.io/add-base-url: "true"
     # cert-manager.io/cluster-issuer: letsencrypt-production
     cert-manager.io/cluster-issuer: letsencrypt-staging # important!!!
-    nginx.ingress.kubernetes.io/app-root: /
+    # nginx.ingress.kubernetes.io/app-root: /
     cert-manager.io/acme-challenge-type: http01
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
