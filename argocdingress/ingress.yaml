@@ -24,16 +24,15 @@ metadata:
   # labels:
   #   app: argocd-server
   annotations:
+    # kubernetes.io/tls-acme: "true"
     # nginx.ingress.kubernetes.io/add-base-url: "true"
-    # nginx.ingress.kubernetes.io/rewrite-target: /$1 
     # cert-manager.io/cluster-issuer: letsencrypt-production
-    cert-manager.io/cluster-issuer: letsencrypt-staging
-    # cert-manager.io/issuer: letsencrypt-dev
-    kubernetes.io/tls-acme: "true"
-    acme.cert-manager.io/http01-edit-in-place: "true"
+    cert-manager.io/cluster-issuer: letsencrypt-staging # important!!!
+    nginx.ingress.kubernetes.io/app-root: /login
+    cert-manager.io/acme-challenge-type: http01
     nginx.ingress.kubernetes.io/ssl-passthrough: "true"
     nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
-
+    acme.cert-manager.io/http01-edit-in-place: "true" # important!!!
 spec:
   ingressClassName: nginx
   tls:
