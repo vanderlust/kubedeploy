@@ -5,11 +5,9 @@ metadata:
  name: letsencrypt-prod-gce
 spec:
   acme:
-    # server: https://acme-stagingv02.api.letsencrypt.org/directory
     server: https://acme-v02.api.letsencrypt.org/directory
     email: authenticator@tiegri.com
     privateKeySecretRef:
-      # name: letsencrypt-dev
       name: letsencrypt-prod-gce
     solvers:
     - http01:
