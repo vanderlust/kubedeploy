@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: streaming-ingress2
+  name: streaming-ingress
   labels:
     app: streaming-application
   annotations:
