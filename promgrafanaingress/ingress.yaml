@@ -21,7 +21,7 @@ spec:
      http:
        paths:
          - path: /grafana(/|$)(.*)
-           pathType: ImplementationSpecific
+           pathType: Exact
            backend:
              service:
                name: kube-prometheus-stack-grafana
