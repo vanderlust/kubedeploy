@@ -21,7 +21,7 @@ spec:
      http:
        paths:
          - path: /grafana(/|$)(.*)
-           pathType: Prefix
+           pathType: Rewrite
            backend:
              service:
                name: kube-prometheus-stack-grafana
