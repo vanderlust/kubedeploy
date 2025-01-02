@@ -4,8 +4,8 @@ metadata:
  name: mon-ingress
  namespace: monitoring
  annotations:
-  #  cert-manager.io/cluster-issuer: letsencrypt-production
-   cert-manager.io/cluster-issuer: letsencrypt-staging
+   cert-manager.io/cluster-issuer: letsencrypt-production
+  #  cert-manager.io/cluster-issuer: letsencrypt-staging
    kubernetes.io/tls-acme: "true"
    acme.cert-manager.io/http01-edit-in-place: "true"
    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
