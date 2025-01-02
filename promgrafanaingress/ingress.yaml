@@ -2,7 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
  name: prometheus-community-grafana-ingress
- namespace: monitoring
+ namespace: argocd
  annotations:
    cert-manager.io/cluster-issuer: letsencrypt-production
   #  cert-manager.io/cluster-issuer: letsencrypt-staging
