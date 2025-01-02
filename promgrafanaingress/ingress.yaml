@@ -4,8 +4,8 @@ metadata:
  name: prometheus-community-grafana-ingress
  namespace: monitoring
  annotations:
-   cert-manager.io/cluster-issuer: letsencrypt-production
-   # cert-manager.io/cluster-issuer: letsencrypt-staging
+  #  cert-manager.io/cluster-issuer: letsencrypt-production
+   cert-manager.io/cluster-issuer: letsencrypt-staging
    kubernetes.io/tls-acme: "true"
    acme.cert-manager.io/http01-edit-in-place: "true"
    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
@@ -15,7 +15,7 @@ spec:
  tls:
    - hosts:
        - "monitor.cessmedia.com"
-     secretName: monitoring-tls
+     secretName: monitor-tls
  rules:
    - host: "monitor.cessmedia.com"
      http:
