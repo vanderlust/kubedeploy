@@ -20,8 +20,8 @@ spec:
    - host: "dig.cessmedia.com"
      http:
        paths:
-         - path: /grafana(/|$)(.*)
-           pathType: Exact
+         - path: /(.*)
+           pathType: ImplementationSpecific
            backend:
              service:
                name: kube-prometheus-stack-grafana
