@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+ name: prometheus-community-grafana-ingress
+ namespace: monitoring
+ annotations:
+   cert-manager.io/cluster-issuer: letsencrypt-production
+   # cert-manager.io/cluster-issuer: letsencrypt-staging
+   kubernetes.io/tls-acme: "true"
+   acme.cert-manager.io/http01-edit-in-place: "true"
+   nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+spec:
+ ingressClassName: nginx
+ tls:
+   - hosts:
+       - "monitor.cessmedia.com"
+     secretName: monitoring-tls
+ rules:
+   - host: "monitor.cessmedia.com"
+     http:
+       paths:
+         - path: /
+           pathType: Prefix
+           backend:
+             service:
+               name: prometheus-community-grafana
+               port:
+                 number: 80
