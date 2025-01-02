@@ -15,7 +15,7 @@ spec:
  tls:
    - hosts:
        - "monitor.cessmedia.com"
-     secretName: monitor-tls
+     secretName: monitor.cessmedia.com
  rules:
    - host: "monitor.cessmedia.com"
      http:
