@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
- name: promegrafana-ingress
+ name: mon-ingress
  namespace: cert-manager
  annotations:
   #  cert-manager.io/cluster-issuer: letsencrypt-production
@@ -14,10 +14,10 @@ spec:
  ingressClassName: nginx
  tls:
    - hosts:
-       - "monitor.cessmedia.com"
-     secretName: monitor.cessmedia.com
+       - "dig.cessmedia.com"
+     secretName: dig.cessmedia.com
  rules:
-   - host: "monitor.cessmedia.com"
+   - host: "dig.cessmedia.com"
      http:
        paths:
          - path: /
