@@ -20,7 +20,7 @@ spec:
    - host: "dig.cessmedia.com"
      http:
        paths:
-         - path: /
+         - path: /grafana(/|$)(.*)
            pathType: Prefix
            backend:
              service:
